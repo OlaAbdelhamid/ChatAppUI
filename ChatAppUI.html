@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href = "css/bootstrap.min.css" rel = "stylesheet" />
+
+</head>
+
+<body>
+
+        <style>   
+
+            .buttonLogin {   
+                   background-color: #4CAF50;   
+                   width: 100%;  
+                    color: black;   
+                    padding: 15px;   
+                    margin: 10px 0px;   
+                    border: none;   
+                    cursor: pointer;   
+                     }   
+ 
+             input[type=text], input[type=password] {   
+                    width: 100%;   
+                    margin: 8px 0;  
+                    padding: 12px 20px;   
+                    display: inline-block;   
+                    border: 2px solid green;   
+                    box-sizing: border-box;   
+                }  
+             button:hover {   
+                    opacity: 0.7;   
+                }    
+                 
+                .container {
+                margin: 0 auto;
+                width: 1000px;
+                background: rgb(233, 233, 233);
+                border-radius: 5px;
+                } 
+
+                .me {
+                color: cadetblue;
+                }
+
+                .align-left {
+                text-align: left;
+                }
+
+                .align-right {
+                text-align: right;
+                }
+
+                .float-right {
+                float: right;
+                }
+
+                .clearfix:after {
+                    visibility: hidden;
+                    display: block;
+                    font-size: 0;
+                    content: " ";
+                    clear: both;
+                    height: 0;
+                }
+
+                .button {
+                float: right;
+                color: blue;
+                font-size: 16px;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                font-weight: bold;
+                background: #F2F5F8;
+                }
+
+                .chat-num-messages {
+      color: grey;
+    }
+    
+
+  
+  .chat-history {
+    padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 575px;
+  }
+
+    
+    .message {      
+      color: white;
+      padding: 18px 20px;
+      line-height: 26px;
+      font-size: 16px;
+      border-radius: 7px;
+      margin-bottom: 30px;
+      width: 90%;
+      position: relative;
+    }
+
+    
+    .my-message {
+      background: rgb(150, 179, 216);
+    }
+    
+    .other-message {
+      background: rgb(97, 214, 97);
+    }
+    
+    ul {
+    padding: 20px;
+    height: 770px;
+ 
+    
+    
+    }
+    li {
+      padding-bottom: 20px;
+    }
+  
+  .chat-message {
+    padding: 30px;
+  }
+    textarea {
+      width: 100%;
+      border:darkcyan;
+      background: rgb(255, 255, 255);
+      padding: 10px 20px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
+    }
+    #divChat {
+  display: none;
+  border: 1pt;
+}
+
+                
+            </style>   
+            </head>    
+            <body>    
+                <center><h1> My Chat APP </h1></center>
+                
+              
+                    <div id = "divLogin" class="container">   
+                        <input type="text" placeholder="Type Group Name" id="groupName" required>    
+                        <input type="text" placeholder="Type Your Name" id= "username" required>  
+                        <button type="button" onclick= "makeVisible()" class="buttonLogin">Join Group</button>   
+                        
+                    </div>   
+                    <form>  
+                    <div id = "divChat" class="container">
+                        <div class="container clearfix">
+                            <div class="chat">
+                              <div class="chat-header clearfix">
+                                  <div class="chat-with">Group Name: Online Users(3)</div>
+                                  <button style="float: right;" class="btn btn-success">Logout</button>
+                                </div>
+                              </div>
+                              
+                              <div class="chat-history">
+                                <ul>
+                                  <li style="text-align: right;" class="clearfix">
+                                    <div class="message-data align-right">
+                                      <span >User One</span>
+                                    </div>
+                                        <div class="message other-message float-right">
+                                      Did you try my Chat App
+                                    </div>
+                                  </li>
+                                  
+                                  <li>
+                                    <div>
+                                      <span> User 2</span>
+                                    </div>
+                                    <div class="message my-message">
+                                      Yes, Great
+                                    </div>
+                                </li>
+
+                                
+                              </div>
+                              
+                              <div class="chat-message clearfix">
+                                <textarea name="message-to-send" id="message-to-send" placeholder ="Message" rows="3"></textarea>
+                                        
+                              
+                               
+                                
+                                <button type="button" class="btn btn-success">Send Message</button>
+                        
+                              </div> 
+                              
+                            </div>
+                            
+                          </div>
+                        
+                        </script>
+                        
+                    </div>
+                </form>  
+                <script>
+                const  makeVisible = function(){
+                    if(document.getElementById("groupName").value != "" && document.getElementById("username").value != ""){
+                        
+                        document.getElementById('divChat').style.display = 'block';
+                        document.getElementById("divLogin").style.display = "none";
+
+                    }
+                    else{
+                        alert("Please fill out the required data");
+                    }
+                }
+                </script>   
+            </body>     
+            </html>  
+
+</body>
+</html>
